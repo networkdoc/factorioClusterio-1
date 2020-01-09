@@ -5,6 +5,8 @@ RUN groupadd --gid 1000 node \
 
 ENV NODE_VERSION 13.6.0
 
+WORKDIR /home/node/app
+
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
     amd64) ARCH='x64';; \
@@ -61,8 +63,8 @@ RUN set -ex \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
-COPY docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/entrypoint.sh
+COPY docker-entrypoint.sh /home/node/app/
+RUN chmod +x /home/node/app/entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD ["node","master.js"]
