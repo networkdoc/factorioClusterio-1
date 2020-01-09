@@ -42,10 +42,10 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-RUN git clone -b master https://github.com/clusterio/factorioClusterio.git \
- && npm install --only=production \
- && cp config.json.dist config.json \
- && node ./lib/npmPostinstall
+RUN git clone -b master https://github.com/clusterio/factorioClusterio.git 
+# && npm install --only=production \
+# && cp config.json.dist config.json \
+# && node ./lib/npmPostinstall
 #COPY docker-entrypoint.sh /usr/local/bin
 
 #ENTRYPOINT ["docker-entrypoint.sh"]
