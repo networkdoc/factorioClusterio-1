@@ -21,4 +21,4 @@ RUN git clone -b master https://github.com/clusterio/factorioClusterio.git . \
 
 EXPOSE 8080 34197
 
-CMD ["node","master.js"]
+CMD ["node"]
