@@ -9,7 +9,7 @@ ENV VERSION=latest \
 VOLUME /opt/factorioClusterio
 
 RUN apk add --no-cache curl tar xz git nodejs nodejs-npm make g++ python \
-    && mkdir /opt/factorioClusterio 
+    && mkdir -p /opt/factorioClusterio 
 
 WORKDIR /opt/factorioClusterio
 
@@ -21,6 +21,6 @@ RUN git clone -b master https://github.com/clusterio/factorioClusterio.git /opt/
     && cp config.json.dist config.json \
     && node ./lib/npmPostinstall
 
-EXPOSE 8080 34197
+EXPOSE 8080 443 34197
 
 CMD ["node","$MODE"]
