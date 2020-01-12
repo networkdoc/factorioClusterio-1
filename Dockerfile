@@ -8,7 +8,7 @@ ENV VERSION=latest \
 
 VOLUME /factorioClusterio
 
-RUN apk add --no-cache curl tar xz git nodejs nodejs-npm python-dev build-essential
+RUN apk add --no-cache curl tar xz git nodejs nodejs-npm make gcc g++ python
 
 WORKDIR /factorioClusterio
 
