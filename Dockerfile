@@ -22,6 +22,6 @@ WORKDIR /opt/factorioClusterio
 
 EXPOSE 8080 443 34197
 
-COPY docker-entrypoint.sh /
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
