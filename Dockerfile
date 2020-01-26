@@ -23,10 +23,4 @@ RUN git clone -b master https://github.com/clusterio/factorioClusterio.git /opt/
 
 EXPOSE 8080 443 34197
 
-COPY docker-entrypoint.sh /
-
-RUN chmod +x docker-entrypoint.sh
-
-ENTRYPOINT ["docker-entrypoint.sh"]
-
-CMD ["master.js"]
+CMD ["node"]
