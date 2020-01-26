@@ -15,4 +15,4 @@ WORKDIR /opt/factorioClusterio
 
 EXPOSE 8080 443 34197
 
-CMD ["node","$MODE"]
+CMD node $MODE
