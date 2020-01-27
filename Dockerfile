@@ -6,14 +6,14 @@ FROM frolvlad/alpine-glibc
 ENV VERSION=latest \
     MODE=master.js
 
-VOLUME /opt/factorioClusterio
+VOLUME /factorioClusterio
 
 RUN apk add --no-cache curl tar xz git nodejs nodejs-npm make g++ python \
-    && mkdir -p /opt/factorioClusterio 
+    && mkdir -p /factorioClusterio 
 
-WORKDIR /opt/factorioClusterio
+WORKDIR /factorioClusterio
 
-RUN git clone -b master https://github.com/clusterio/factorioClusterio.git /opt/factorioClusterio && cd /opt/factorioClusterio
+RUN git clone -b master https://github.com/clusterio/factorioClusterio.git && cd /factorioClusterio
 RUN curl -s -L -S -k https://www.factorio.com/get-download/$VERSION/headless/linux64 -o factorio.tar.gz && tar -xf factorio.tar.gz
 
 EXPOSE 8080 443 34197
