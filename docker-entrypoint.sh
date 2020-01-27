@@ -26,16 +26,4 @@ if [[ ! -f $FACTORIO_VOL/bin/x64/factorio ]]; then
   && rm factorio.tar.gz
 fi
 
-if [[ $(id -u) = 0 ]]; then
-  # Update the User and Group ID based on the PUID/PGID variables
-  usermod -o -u "$PUID" clusterio
-  groupmod -o -g "$PGID" clusterio
-  # Take ownership of factorio data if running as root
-  chown -R clusterio:clusterio "$CLUSTERIO_VOL"
-  # Drop to the clusterio user
-  SU_EXEC="su-exec clusterio"
-else
-  SU_EXEC=""
-fi
-
-exec $SU_EXEC node $CLUSTERIO_VOL "$MODE" "$@"
+exec node $CLUSTERIO_VOL"$MODE" "$@"
