@@ -7,7 +7,7 @@ ENV FAC-VERSION=latest
 
 RUN apk add --no-cache curl tar xz git nodejs nodejs-npm make g++ python 
 
-RUN git clone -b master https://github.com/clusterio/factorioClusterio.git
+RUN git clone -b master https://github.com/clusterio/factorioClusterio.git /factorioClusterio/
 
 WORKDIR /factorioClusterio
 
