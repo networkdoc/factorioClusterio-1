@@ -12,7 +12,7 @@ RUN git clone -b master https://github.com/clusterio/factorioClusterio.git
 
 WORKDIR /factorioClusterio
 
-RUN curl -s -L -S -k https://www.factorio.com/get-download/$FAC-VERSION/headless/linux64 -o factorio.tar.gz
+RUN curl -s -L -S -k https://www.factorio.com/get-download/latest/headless/linux64 -o factorio.tar.gz
 RUN tar -xf factorio.tar.gz
 RUN npm install --only=production
 RUN cp config.json.dist config.json
