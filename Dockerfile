@@ -5,8 +5,7 @@ FROM frolvlad/alpine-glibc
 
 ENV FAC-VERSION=latest
 
-RUN apk add --no-cache curl tar xz git nodejs nodejs-npm make g++ python \
-    && mkdir -p /opt/factorioClusterio 
+RUN apk add --no-cache curl tar xz git nodejs nodejs-npm make g++ python 
 
 RUN git clone -b master https://github.com/clusterio/factorioClusterio.git
 
