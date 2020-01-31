@@ -5,8 +5,6 @@ FROM frolvlad/alpine-glibc
 
 ENV VERSION=latest
 
-VOLUME /
-
 RUN apk add --no-cache curl tar xz git nodejs nodejs-npm make g++ python \
     && mkdir -p /opt/factorioClusterio 
 
@@ -21,5 +19,7 @@ RUN git clone -b master https://github.com/clusterio/factorioClusterio.git \
     && node ./lib/npmPostinstall
 
 EXPOSE 8080 443 34197
+
+VOLUME /factorioClusterio
 
 CMD ["node","client.js", "start"]
