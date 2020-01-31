@@ -1,4 +1,4 @@
-# (UNOFFICIAL) factorioClusterio
+# (UNOFFICIAL) factorioClusterio docker image
 
 
 image for running the latest version of clusterio on the image from factoriotools/factorio-docker.
